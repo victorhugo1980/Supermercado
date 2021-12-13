@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="estilos/style.css" />
+    <title>Supermercado</title>
+  </head>
+  <body>
+    <header>
+      <div>
+        <button
+          class="button"
+          type="button"
+          id="modo"
+          value="Oscuro"
+          onclick="cambiarModo(this)"
+        >
+          Oscuro
+        </button>
+      </div>
+    </header>
+    <header class="header">
+      <h1 id="textmode">Supermercado</h1>
+    </header>
+    <main class="contenedor">
+      <div class="grid">
+        <div id="caja1">
+          <img class="producto_imagen" src="estilos/cajera.jpg" alt="cajera" />
+          <button class="button" id="boton" type="button" onclick="abrirCaja()">
+            Abrir
+          </button>
+        </div>
+        <div>
+          <img class="producto_imagen" src="estilos/cajera.jpg" alt="cajera" />
+          <button class="button" type="button">Cerrar</button>
+        </div>
+        <div>
+          <img class="producto_imagen" src="estilos/cajera.jpg" alt="cajera" />
+          <input class="button" type="button" value="abrir" />
+        </div>
+        <div>
+          <img class="producto_imagen" src="estilos/cajera.jpg" alt="cajera" />
+          <input class="button" type="button" value="abrir" />
+        </div>
+      </div>
+    </main>
+    <!--  <div class="posicion">
+      <picture>
+        <img class="contenedor" src="/estilos/supermercado.jpg" alt="fondo" />
+      </picture>
+    </div> -->
+  </body>
+
+  <script>
+    /*MODO NOCHE*/
+    function cambiarModo(ele) {
+      var cuerpoweb = document.body;
+      var mod = document.getElementById("modo").value;
+
+      if (mod == "Oscuro") {
+        cuerpoweb.classList.toggle("oscuro");
+        modo.innerHTML = "Claro";
+        document.getElementById("modo").value = "Claro";
+      }
+      if (mod == "Claro") {
+        cuerpoweb.classList.toggle("oscuro");
+        modo.innerHTML = "Oscuro";
+        document.getElementById("modo").value = "Oscuro";
+      }
+    }
+    /*CIERRA MODO NOCHE*/
+
+    function abrirCaja() {
+      let contador = 1;
+      var uno = document.getElementById("boton");
+      uno.innerHTML = "Abriendo Caja";
+      document.getElementById("boton").style.backgroundColor = "blue";
+
+      if (uno.innerHTML == "Abriendo Caja") {
+        uno.onclick = function () {
+          uno.innerHTML = "Cliente " + " " + contador;
+          document.getElementById("boton").style.backgroundColor = "green";
+
+          if (contador == 4) {
+            const button = document.createElement("button");
+            button.type = "button";
+            button.innerText = "Cerrando caja";
+            button.className = "button";
+            button.id = "boton1";
+            button.style.backgroundColor = "#F84300";
+            let x = document.getElementById("caja1");
+            x.appendChild(button);
+          } else {
+            document.getElementById("boton").style.backgroundColor = "green";
+          }
+
+          if (contador == 5) {
+            let boton1 = document.getElementById("boton1");
+            document.getElementById("boton").style.display = "none";
+            boton1.style.backgroundColor = "#8f0005";
+            boton1.innerHTML = "Cerrada";
+
+            const button = document.createElement("button");
+            button.type = "button";
+            button.innerText = "Abrir";
+            button.className = "button";
+            button.id = "boton2";
+            button.style.backgroundColor = "#F84300";
+            let y = document.getElementById("caja1");
+            y.appendChild(button);
+            button.addEventListener("click", abrirCaja);
+
+            /*    button.onclick = function () {
+              abrirCaja();
+              document
+                .getElementById("boton2")
+                .addEventListener("click", abrirCaja);
+            }; */
+
+            /* document
+              .getElementById("boton2")
+              .addEventListener("click", abrirCaja); */
+          }
+          contador++;
+          // console.log(contador);
+        };
+        /* } else {
+        uno.innerHTML = "Abriendo Caja";
+        document.getElementById("boton").style.backgroundColor = "blue";
+
+        uno.innerHTML = "Abrir";*/
+      }
+    }
+  </script>
+</html>

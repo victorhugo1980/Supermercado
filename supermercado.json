@@ -1,0 +1,31 @@
+[
+  {
+    "caja": "Caja 1",
+    "id":1,
+    "contador":"contador1",
+    "estado":"cliente"
+  },
+   {
+    "caja": "Caja 2",
+    "id":2,
+    "contador":"contador2",
+    "estado":"cliente"
+   
+  },
+   {
+    "caja": "Caja 3",
+    "id":3,
+    "contador":"contador3",
+    "estado":"cliente"
+   
+
+  },
+   {
+    "caja": "Caja 4",
+    "id":4,
+    "contador":"contador4",
+    "estado":"cliente"
+  
+
+  }
+]
