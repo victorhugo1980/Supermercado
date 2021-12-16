@@ -29,22 +29,17 @@ const abrirCaja=e=>{
   //var s=template_card.querySelector('.button').dataset.id=e.target.dataset.id;//obtiene el id de la caja
   e.target.textContent="caja abierta";
   e.target.style.backgroundColor = "green";
-  const contenido = document.getElementById('card_body');
-  const boton = document.createElement("button");
-            boton.type = "button";
-            boton.innerText = "Cerrando caja";
-            boton.className = "button";
-            boton.style.backgroundColor = "#F84300";
+  //const contenido = document.getElementById('card_body');
+ // const boton = document.createElement("button");
+           // boton.type = "button";
+           // boton.innerText = "Cerrando caja";
+           // boton.className = "button";
+            //boton.style.backgroundColor = "#F84300";
            // let x = document.getElementById("caja_1");
        
       //contenido.appendChild(boton);
  // e.target.style.display="none";//oculta el boton
- contadorCaja(e.target.parentElement)
-  }
-  e.stopPropagation();//detiene el evento que se haya generado con el
-}
-//contador
- const contadorCaja=objeto=>{
+const contadorCaja=objeto=>{
    console.log(objeto);
    const cuenta={
      id: objeto.querySelector('.button').dataset.id,
@@ -59,34 +54,39 @@ const abrirCaja=e=>{
    }
    contador[cuenta.id]={...cuenta}
    //console.log(contador);
-   pintarContador();
+   pintarContador(cuenta);
    } 
 ///mirar que no fucniona
-   const pintarContador=()=>{
+   const pintarContador=(e)=>{
+    const boton = document.createElement("button");
+    boton.getElementsByClassName('button');
+    boton.innerText='cliente'
 
-     Object.values(contador).forEach(nCaja=>{
-       //template_card.querySelector('.button').textContent="caja";
-      // nombreBoton.textContent="caja";
-      //console.log(template_card.querySelector('.button'))
-      //template_card.querySelector('h2').textContent=nCaja.estado+' '+nCaja.cantidad
-      //document.getElementsByTagName('h2').value= nCaja.estado+' '+nCaja.cantidad;
- 
-      const con=document.getElementById('contador');
-      con.textContent=nCaja.estado+' '+nCaja.cantidad 
-    //console.log(template_card.querySelector('h2').textContent=nCaja.estado+' '+nCaja.cantidad)
-     //console.log(nCaja.estado+' '+nCaja.cantidad);//bueno
-      const clone= con.cloneNode(con);
-      fragment.appendChild(clone);
+     Object.values(contador).forEach(nCaja=>{ 
+      const con=document.getElementById(e.id)
+      con.textContent=nCaja.estado+' '+e.cantidad 
+      if(e.cantidad==4){
+
+        alert('caja llena')
+        nCaja.cantidad=0;
+        
+      }
      })
- items.appendChild(fragment)
+
+//detiene el evento que se haya generado con el
    }
+ contadorCaja(e.target.parentElement)
+  }
+  e.stopPropagation();//detiene el evento que se haya generado con el
+}
+
 //funcion para crear cajas
 const pintarCards=data=>{
   data.forEach(caja => {
     template_card.querySelector('h3').textContent= caja.caja;
     //template_card.querySelector('button').textContent=caja.estado;
     template_card.querySelector('.button').dataset.id=caja.id;
-    template_card.querySelector("h2").textContent;
+    template_card.querySelector("h2").id=caja.id;
      const clone= template_card.cloneNode(true);
     fragment.appendChild(clone);
        //console.log(caja);
