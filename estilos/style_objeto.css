@@ -25,6 +25,17 @@ html {
   text-align: center;
    font-size: 3rem;
 }
+h3 .enlace{
+  text-decoration: none;
+  font-size: 1.6rem;
+}
+a:hover {
+  font-size:20px;
+  color:rgb(11, 26, 226);
+}
+a{
+  color: black;
+}
 
 .header {
   text-align: center;
@@ -39,6 +50,20 @@ html {
   .grid {
     grid-template-columns: repeat(4, 1fr);
   }
+    .small-btn {
+        width: 50px;
+        height: 25px;
+    }
+    
+    .medium-btn {
+        width: 70px;
+        height: 30px;
+    }
+    
+    .big-btn {
+        width: 90px;
+        height: 40px;
+    }
 }
 .producto_imagen {
   width: 100%;
@@ -61,6 +86,8 @@ html {
   background-image: none;
   background-color: #252e2e;
   color: #f1eded;
+  
+
 }
 /*imagen picture*/
 .posicion {

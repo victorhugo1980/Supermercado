@@ -15,6 +15,7 @@ const fetchData =async()=>{
 //ACCEDER A TEMPLATE
 
 const items= document.getElementById('items');
+//const hijo= document.getElementById('card_body');
 const template_card= document.getElementById('template_card').content;
 const fragment= document.createDocumentFragment();
 const nombreBoton= document.getElementsByClassName('button').content;
@@ -29,6 +30,8 @@ const abrirCaja=e=>{
   //var s=template_card.querySelector('.button').dataset.id=e.target.dataset.id;//obtiene el id de la caja
   e.target.textContent="caja abierta";
   e.target.style.backgroundColor = "green";
+
+
   //const contenido = document.getElementById('card_body');
  // const boton = document.createElement("button");
            // boton.type = "button";
@@ -49,28 +52,43 @@ const contadorCaja=objeto=>{
 
    if(contador.hasOwnProperty(cuenta.id)){
      cuenta.cantidad=contador[cuenta.id].cantidad+1;
-     console.log(cuenta.cantidad);
-    
+     console.log(cuenta.cantidad);    
    }
+
    contador[cuenta.id]={...cuenta}
    //console.log(contador);
    pintarContador(cuenta);
+
    } 
 ///mirar que no fucniona
    const pintarContador=(e)=>{
-    const boton = document.createElement("button");
+     
+   /*  const boton = document.createElement("button");
     boton.getElementsByClassName('button');
-    boton.innerText='cliente'
+    boton.innerText='cliente' */
 
      Object.values(contador).forEach(nCaja=>{ 
       const con=document.getElementById(e.id)
       con.textContent=nCaja.estado+' '+e.cantidad 
+    if(e.cantidad==1){
+         /*   const boton = document.createElement("button");
+           boton.type = "button";
+           boton.innerText = "atendiendo";
+           boton.classList="button";
+           boton.style.backgroundColor = "#F84300";
+           let x = document.getElementById("card_body");
+           x.appendChild(boton); */
+           return;
+      }
+
       if(e.cantidad==4){
 
         alert('caja llena')
         nCaja.cantidad=0;
         
+        
       }
+    
      })
 
 //detiene el evento que se haya generado con el

@@ -84,6 +84,7 @@
           document.getElementById("boton").style.backgroundColor = "green";
 
           if (contador == 4) {
+            alert("Cerrando caja");
             const button = document.createElement("button");
             button.type = "button";
             button.innerText = "Cerrando caja";
@@ -101,8 +102,9 @@
             document.getElementById("boton").style.display = "none";
             boton1.style.backgroundColor = "#8f0005";
             boton1.innerHTML = "Cerrada";
+            abrirCaja();
 
-            const button = document.createElement("button");
+            /* const button = document.createElement("button");
             button.type = "button";
             button.innerText = "Abrir";
             button.className = "button";
@@ -110,7 +112,7 @@
             button.style.backgroundColor = "#F84300";
             let y = document.getElementById("caja1");
             y.appendChild(button);
-            button.addEventListener("click", abrirCaja);
+            button.addEventListener("click", abrirCaja); */
 
             /*    button.onclick = function () {
               abrirCaja();
