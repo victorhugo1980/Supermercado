@@ -4,11 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="estilos/style_objeto.css" />
-    <title>Document</title>
+    <link rel="stylesheet" href="estilos/style.css" />
+    <title>Supermercado</title>
   </head>
   <body>
-     <div>
+    <header>
+      <div>
         <button
           class="button"
           type="button"
@@ -18,35 +19,46 @@
         >
           Oscuro
         </button>
-        <h3><a class="enlace" href="estilos/Despliegue de Aplicaciones Web.pdf"  target="_blank">Trabajo DAW</a></h3>
-      </div>
-      
-    <div class="contenedor">
-
-      <h1 class="texto">🎅Supermercado🎅</h1>
-      <hr />
-        <div class="grid" id="items">
+        <button class="button" onclick="guardarDatos()">Guardar</button>
+          <h3><a class="enlace"  href="estilos/Despliegue de Aplicaciones Web.pdf"  target="_blank">Trabajo DAW</a></h3>
           
-        </div>
-
-          <template id="template_card">
-              <div class="card">
-                  <div id="card_body">
-                    <h3></h>
-                    <h2></h2>
-                    <img class="producto_imagen" src="estilos/cajera.jpg" alt="cajera">
-                    <button class="button"  type="button">Caja cerrada</button>
-                  </div>
-                </div>
-          </template>
-
-
     </div>
-    <script src="supermercadojs.js"></script>
+    </header>
+    <header class="header">
+      <h1 id="textmode">Supermercado</h1>
+    </header>
+    <main class="contenedor">
+      <div class="grid">
+        <div name="numero_caja" id="caja_1">
+          <img class="producto_imagen" src="estilos/cajera.jpg" alt="cajera" />
+          <button class="button" id="1" type="button">1</button>
+        </div>
+        <div name="numero_caja" id="caja_2">
+          <img class="producto_imagen" src="estilos/cajera.jpg" alt="cajera" />
+          <button class="button" id="2" type="button">2</button>
+        </div>
+        <div name="numero_caja" id="caja_3">
+          <img class="producto_imagen" src="estilos/cajera.jpg" alt="cajera" />
+          <button class="button" id="3" type="button">3</button>
+        </div>
+        <div name="numero_caja" id="caja_4">
+          <img class="producto_imagen" src="estilos/cajera.jpg" alt="cajera" />
+          <button class="button" id="4" type="button">4</button>
+        </div>
+      </div>
+    </main>
+    <!--  <div class="posicion">
+      <picture>
+        <img class="contenedor" src="/estilos/supermercado.jpg" alt="fondo" />
+      </picture>
+    </div> -->
   </body>
-</html>
-<script>
-   
+
+  <script>
+    /*GUARDAR*/
+
+
+
     /*MODO NOCHE*/
     function cambiarModo(ele) {
       var cuerpoweb = document.body;
@@ -66,4 +78,197 @@
       }
     }
     /*CIERRA MODO NOCHE*/
-</script>
+    /*DEFINIR NOMBRE A LAS CAJAS PARA CAPTURAR EL CLICK*/
+    const numeroCaja = document.getElementsByName("numero_caja");
+    // console.log(numeroCaja);
+    let numCaja1;
+    let numCaja2;
+    let numCaja3;
+    let numCaja4;
+    let contador1 = 1;
+    let contador2 = 1;
+    let contador3 = 1;
+    let contador4 = 1;
+    //let inicio=0;
+
+    /*RECORRER LAS CAJAS */
+    numeroCaja.forEach(function (caja) {
+      caja.addEventListener("click", function () {
+        abrirCaja(caja.innerText);
+      });
+    });
+    //probar funciones
+
+    function abrirCaja(num) {
+      if (num == 1) {
+        let inicio = new Date();
+        //numCaja = "caja" + num;
+        numCaja1 = document.getElementById("1");
+        console.log(numCaja1);
+        numCaja1.innerHTML = "caja abierta";
+        numCaja1.style.backgroundColor = "#079685";
+        numCaja1.addEventListener("click", function () {
+          numCaja1.style.backgroundColor = "#F39C12";
+          numCaja1.innerHTML = "cliente " + (contador1);
+          console.log(contador1);
+
+
+
+          if (contador1 == 4) {
+            let fin = new Date();
+            alert("cerrando caja");
+            alert("Tiempo transcurrido" + (fin - inicio) / 1000);
+            const button1 = document.createElement("button");
+            button1.type = "button";
+            button1.innerText = "Cerrando caja";
+            button1.className = "button";
+            button1.id = "boton_1";
+            button1.style.backgroundColor = "#F84300";
+            let x = document.getElementById("caja_1");
+            x.appendChild(button1);
+            button1.addEventListener("click", function () {
+              document.getElementById("1").style.display = "none";
+              button1.style.backgroundColor = "red";
+              button1.innerHTML = "caja cerrada";
+            });
+          }
+         if (contador1 == 5) {
+            let nuevo1 = document.getElementById("boton1");
+            document.getElementById("1").style.display = "none";
+            nuevo1.style.backgroundColor = "red";
+            nuevo1.innerHTML = "caja cerrada";
+          } 
+          contador1++;
+        });
+      
+      }
+      if (num == 2) {
+        //numCaja = "caja" + num;
+        let inicio = new Date();
+        numCaja2 = document.getElementById("2");
+        console.log(numCaja2);
+        numCaja2.innerHTML = "caja abierta";
+        numCaja2.style.backgroundColor = "#079685";
+        numCaja2.addEventListener("click", function () {
+          numCaja2.style.backgroundColor = "#F39C12";
+          numCaja2.innerHTML = "cliente " + contador2;
+          console.log(contador2);
+
+          if (contador2 == 4) {
+            let fin = new Date();
+            alert("cerrando caja");
+            alert("Tiempo transcurrido" + (fin - inicio) / 1000);
+            const button2 = document.createElement("button");
+            button2.type = "button";
+            button2.innerText = "Cerrando caja";
+            button2.className = "button";
+            button2.id = "boton_2";
+            button2.style.backgroundColor = "#F84300";
+            let x = document.getElementById("caja_2");
+            x.appendChild(button2);
+            button2.addEventListener("click", function () {
+              document.getElementById("2").style.display = "none";
+              button2.style.backgroundColor = "red";
+              button2.innerHTML = "caja cerrada";
+            });
+          }
+          if (contador2 == 5) {
+            let nuevo2 = document.getElementById("boton_2");
+            document.getElementById("2").style.display = "none";
+            nuevo2.style.backgroundColor = "red";
+            nuevo2.innerHTML = "caja cerrada";
+          }
+          contador2++;
+        });
+      }
+      if (num == 3) {
+        let inicio = new Date();
+        //numCaja = "caja" + num;
+        numCaja3 = document.getElementById("3");
+        console.log(numCaja3);
+        numCaja3.innerHTML = "caja abierta";
+        numCaja3.style.backgroundColor = "#079685";
+        numCaja3.addEventListener("click", function () {
+        numCaja3.style.backgroundColor = "#F39C12";
+        numCaja3.innerHTML = "cliente " + contador3;
+          console.log(contador3);
+
+          if (contador3 == 4) {
+            let fin = new Date();
+            alert("cerrando caja");
+            alert("Tiempo transcurrido" + (fin - inicio) / 1000);
+            const button3 = document.createElement("button");
+            button3.type = "button";
+            button3.innerText = "Cerrando caja";
+            button3.className = "button";
+            button3.id = "boton_3";
+            button3.style.backgroundColor = "#F84300";
+            let x = document.getElementById("caja_3");
+            x.appendChild(button3);
+            button3.addEventListener("click", function () {
+              document.getElementById("3").style.display = "none";
+              button3.style.backgroundColor = "red";
+              button3.innerHTML = "caja cerrada";
+            });
+          }
+          if (contador3 == 5) {
+            let nuevo3 = document.getElementById("boton_3");
+            document.getElementById("3").style.display = "none";
+            nuevo3.style.backgroundColor = "red";
+            nuevo3.innerHTML = "caja cerrada";
+          }
+          contador3++;
+        });
+      }
+      if (num == 4) {
+        let inicio = new Date();
+        //numCaja = "caja" + num;
+        numCaja4 = document.getElementById("4");
+        console.log(numCaja4);
+        numCaja4.innerHTML = "caja abierta";
+        numCaja4.style.backgroundColor = "#079685";
+        numCaja4.addEventListener("click", function () {
+          numCaja4.style.backgroundColor = "#F39C12";
+          numCaja4.innerHTML = "cliente " + contador4;
+          console.log(contador4);
+
+          if (contador4 == 4) {
+             let fin = new Date();
+            alert("cerrando caja");
+            alert("Tiempo transcurrido" + (fin - inicio) / 1000);
+            const button4 = document.createElement("button");
+            button4.type = "button";
+            button4.innerText = "Cerrando caja";
+            button4.className = "button";
+            button4.id = "boton_4";
+            button4.style.backgroundColor = "#F84300";
+            let x = document.getElementById("caja_4");
+            x.appendChild(button4);
+            button4.addEventListener("click", function () {
+              document.getElementById("4").style.display = "none";
+              button4.style.backgroundColor = "red";
+              button4.innerHTML = "caja cerrada";
+            });
+          }
+          if (contador4 == 5) {
+            let nuevo4 = document.getElementById("boton_4");
+            document.getElementById("4").style.display = "none";
+            nuevo4.style.backgroundColor = "red";
+            nuevo4.innerHTML = "caja cerrada";
+          }
+          contador4++;
+        });
+      }
+    }
+     function guardarDatos() {
+   
+        let cajasValue_json = {"caja1" : contador1, "caja2" : contador2, "caja3" : contador3, "caja4" : contador4};
+    
+        let cajasValue_str = JSON.stringify(cajasValue_json);
+    
+        localStorage.setItem("cajas", cajasValue_str); 
+    
+    }
+  
+  </script>
+</html>

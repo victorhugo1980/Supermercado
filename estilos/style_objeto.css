@@ -17,24 +17,24 @@ html {
   /* max-width: 100%;*/
   height: auto;
   /*   max-width: 100%; */
-  max-width: 130rem; /*tamaño del contenedor 1200pixeles =120rem*/
+  max-width: 0 auto; /*tamaño del contenedor 1200pixeles =120rem*/
   /*max-width: 100%;*/
   margin: 0 auto; /*margen del contenedor*/
 }
-.texto{
+.texto {
   text-align: center;
-   font-size: 3rem;
+  font-size: 3rem;
 }
-h3 .enlace{
+.enlace {
   text-decoration: none;
   font-size: 1.6rem;
 }
 a:hover {
-  font-size:20px;
-  color:rgb(11, 26, 226);
+  font-size: 20px;
+  color: #2e86c1;
 }
-a{
-  color: black;
+a {
+  color: #FF8C00;
 }
 
 .header {
@@ -50,20 +50,7 @@ a{
   .grid {
     grid-template-columns: repeat(4, 1fr);
   }
-    .small-btn {
-        width: 50px;
-        height: 25px;
-    }
-    
-    .medium-btn {
-        width: 70px;
-        height: 30px;
-    }
-    
-    .big-btn {
-        width: 90px;
-        height: 40px;
-    }
+ 
 }
 .producto_imagen {
   width: 100%;
@@ -86,14 +73,14 @@ a{
   background-image: none;
   background-color: #252e2e;
   color: #f1eded;
-  
-
 }
 /*imagen picture*/
 .posicion {
+  display: block;
+  margin: 0 auto;
   position: absolute;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size:cover;
   top: 0px;
   left: 0px;
   max-width: 100%;

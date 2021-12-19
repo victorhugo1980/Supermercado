@@ -96,6 +96,13 @@ body {
   opacity: 0.8;
   z-index: -1;
 }
+a:hover {
+  font-size: 20px;
+  color: #2e86c1;
+}
+a {
+  color: #FF8C00;
+}
 
 .button {
   bottom: 4em;
