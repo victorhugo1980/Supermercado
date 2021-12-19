@@ -14,7 +14,7 @@ html {
 }
 body {
   width: 100%;
-  background-image: url(/estilos/supermercado.jpg);
+  background-image: url(estilos/supermercado.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 
