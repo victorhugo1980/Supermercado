@@ -24,6 +24,10 @@ body {
   /*max-width: 100%;*/
   margin: 0 auto; /*margen del contenedor*/
 }
+img {
+  width: 100%;
+  height: auto;
+}
 .texto {
   text-align: center;
   font-size: 3rem;
@@ -92,7 +96,7 @@ a {
   left: 0px;
   max-width: 100%;
   height: 100vw;
-  background-image: url('estilos/supermercado.jpg');
+  background-image: url("estilos/supermercado.jpg");
   opacity: 0.8;
   z-index: -1;
 }
