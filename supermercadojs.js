@@ -46,9 +46,9 @@ const contadorCaja=objeto=>{
    if(contador.hasOwnProperty(cuenta.id)){
      cuenta.cantidad=contador[cuenta.id].cantidad+1;
      cuenta.inicio= new Date();
-  
+  /* 
      console.log(cuenta.cantidad);  
-     console.log(cuenta.inicio)  
+     console.log(cuenta.inicio) */  
    }
 
    contador[cuenta.id]={...cuenta}
@@ -56,7 +56,7 @@ const contadorCaja=objeto=>{
    pintarContador(cuenta);
 
    } 
-///mirar que no fucniona
+//pintar cajas
    const pintarContador=(e)=>{
      
      Object.values(contador).forEach(nCaja=>{ 
@@ -71,8 +71,8 @@ const contadorCaja=objeto=>{
        console.log(nCaja.fin);
      
         let tiempoTranscurrido = (nCaja.fin-nCaja.inicio)/1000; //en milisegundos
-       // console.log(tiempoTranscurrido);
-        alert('tiempo transcurrido:' + tiempoTranscurrido);
+       //console.log(tiempoTranscurrido);
+        alert('tiempo transcurrido:' + tiempoTranscurrido); 
         alert('caja llena');
         nCaja.cantidad=0;
                     
@@ -80,11 +80,11 @@ const contadorCaja=objeto=>{
     
      })
 
-//detiene el evento que se haya generado con el
+
    }
  contadorCaja(e.target.parentElement)
   }
-  e.stopPropagation();//detiene el evento que se haya generado con el
+  e.stopPropagation();//detiene el evento que se haya generado 
 }
 
 //funcion para crear cajas

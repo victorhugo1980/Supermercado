@@ -12,8 +12,13 @@ html {
 *:after {
   box-sizing: inherit;
 }
+body{
+  background-image: url(/estilos/tree-gdef86204c_1920.jpg);
+  
+}
 
 .contenedor {
+ 
   /* max-width: 100%;*/
   height: auto;
   /*   max-width: 100%; */
@@ -50,6 +55,13 @@ a {
   .grid {
     grid-template-columns: repeat(4, 1fr);
   }
+
+}
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
  
 }
 .producto_imagen {
