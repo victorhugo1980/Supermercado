@@ -77,7 +77,7 @@ const contadorCaja=objeto=>{
         nCaja.cantidad=0;
                     
       }
-    
+    e.stopPropagation();
      })
 
 
