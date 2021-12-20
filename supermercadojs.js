@@ -62,6 +62,7 @@ const contadorCaja=objeto=>{
      Object.values(contador).forEach(nCaja=>{ 
       const con=document.getElementById(e.id);
       con.textContent=nCaja.estado+' '+e.cantidad 
+      console.log(con);
 
 
       if(e.cantidad===4){
@@ -74,15 +75,15 @@ const contadorCaja=objeto=>{
        //console.log(tiempoTranscurrido);
         alert('tiempo transcurrido:' + tiempoTranscurrido); 
         alert('caja llena');
-        nCaja.cantidad=0;
-                    
+        con.cantidad=0;
+                     
       }
-    e.stopPropagation();
+  
      })
 
 
    }
- contadorCaja(e.target.parentElement)
+  contadorCaja(e.target.parentElement)
   }
   e.stopPropagation();//detiene el evento que se haya generado 
 }
