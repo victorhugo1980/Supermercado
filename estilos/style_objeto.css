@@ -1,6 +1,10 @@
 :root {
   --colorTexto: #282fe6;
+  --colorTexto2:#f1eded;
   --colorFondo: #b153d5;
+  --colorBotonOver:#2e86c1;
+  --colorBotonCajera:#c0392b;
+  
 }
 html {
   box-sizing: border-box;
@@ -13,7 +17,11 @@ html {
   box-sizing: inherit;
 }
 body {
-  background-image: url("tree-gdef86204c_1920.jpg");
+  background-image: url("fondoSuper.jpg");
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .contenedor {
@@ -38,10 +46,10 @@ img {
 }
 a:hover {
   font-size: 20px;
-  color: #2e86c1;
+  color: var(--colorTexto);
 }
 a {
-  color: #ff8c00;
+  color:var(--colorBotonCajera);
 }
 
 .header {
@@ -58,11 +66,7 @@ a {
     grid-template-columns: repeat(4, 1fr);
   }
 }
-@media (min-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
+
 .producto_imagen {
   width: 100%;
   cursor: pointer;
@@ -83,7 +87,7 @@ a {
 .oscuro {
   background-image: none;
   background-color: #252e2e;
-  color: #f1eded;
+  color:var(--colorTexto2) ;
 }
 /*imagen picture*/
 .posicion {
@@ -96,7 +100,7 @@ a {
   left: 0px;
   max-width: 100%;
   height: 100vw;
-  background-image: url("estilos/supermercado.jpg");
+  background-image: url("estilos/tienda.jpg");
   opacity: 0.8;
   z-index: -1;
 }
@@ -105,13 +109,14 @@ a {
   bottom: 4em;
   right: 4em;
   cursor: pointer;
-  background-color: #c0392b;
+  background-color:var(--colorBotonCajera) ;
   border-radius: 1.5em;
-  color: white;
+  color: var(--colorTexto2);
   text-transform: uppercase;
   padding: 1em 1.5em;
   display: block;
 }
+
 button:hover {
-  background-color: #2e86c1;
+  background-color: var(--colorTexto);
 }

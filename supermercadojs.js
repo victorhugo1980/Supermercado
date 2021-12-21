@@ -76,6 +76,7 @@ const contadorCaja=objeto=>{
         alert('tiempo transcurrido:' + tiempoTranscurrido); 
         alert('caja llena');
         con.cantidad=0;
+        
                      
       }
   
