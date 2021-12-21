@@ -22,6 +22,7 @@ body {
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
+
 }
 
 .contenedor {
@@ -38,7 +39,10 @@ img {
 }
 .texto {
   text-align: center;
-  font-size: 3rem;
+  font-size: 3.5rem;
+}
+.contadorCaja{
+  font-size: 2rem;
 }
 .enlace {
   text-decoration: none;
