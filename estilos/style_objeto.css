@@ -17,7 +17,7 @@ html {
   box-sizing: inherit;
 }
 body {
-  background-image: url("fondoSuper.jpg");
+  background-image: url("super.png");
   background-position: center center;
   background-attachment: fixed;
   background-size: cover;
