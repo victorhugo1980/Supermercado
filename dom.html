@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .oscuro {
+        background-image: none;
+        background-color: #252e2e;
+        color: var(--colorTexto2);
+      }
+      h1 {
+        text-align: center;
+      }
+      .button {
+      color: white;
+        background-color: #252e2e;
+        bottom: 4em;
+        right: 4em;
+        cursor: pointer;
+        border-radius: 1.5em;
+        text-transform: uppercase;
+        font-weight: bold;
+        padding: 1em 1.5em;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <button
+      class="button"
+      type="button"
+      id="modo"
+      value="Oscuro"
+      onclick="cambiarModo(this)"
+    >
+      Oscuro
+    </button>
+    <h1 id="texto">Manipulando el DOM</h1>
+  </body>
+</html>
+<script>
+  /*MODO NOCHE*/
+  function cambiarModo(ele) {
+    var cuerpoweb = document.body;
+    var mod = document.getElementById("modo").value;
+    var texto = document.getElementById("texto");
+
+    if (mod == "Oscuro") {
+      texto.style.color = "red";
+      texto.style.fontSize = "60px";
+      cuerpoweb.classList.toggle("oscuro");
+      modo.innerHTML = "Claro";
+      modo.style.color="black";
+      modo.style.backgroundColor = "white";
+
+      document.getElementById("modo").value = "Claro";
+    }
+    if (mod == "Claro") {
+      texto.style.color = "black";
+      texto.style.fontSize = "30px";
+      cuerpoweb.classList.toggle("oscuro");
+      modo.innerHTML = "Oscuro";
+      modo.style.color="white";
+      modo.style.backgroundColor = "#252e2e";
+      document.getElementById("modo").value = "Oscuro";
+    }
+  }
+  /*CIERRA MODO NOCHE*/
+</script>
